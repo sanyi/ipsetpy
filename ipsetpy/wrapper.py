@@ -135,7 +135,7 @@ def ipset_add_entry(set_name, entry, entry_timeout=None, exist=False, command_ti
 
 
 def ipset_del_entry(set_name, entry, exist=False, command_timeout=None):
-    arguments = ["add", set_name, entry]
+    arguments = ["del", set_name, entry]
     if exist:
         arguments.append('-exist')
     return ipset_send_command(*arguments, command_timeout=command_timeout)
