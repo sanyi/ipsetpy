@@ -117,8 +117,11 @@ def ipset_send_command_g(*arguments, **kv_arguments):
         _process_error_message(error)
 
 
-def ipset_create_set(set_name, type_name, exist=False, command_timeout=None):
+def ipset_create_set(set_name, type_name, entry_timeout=False, exist=False, command_timeout=None):
     arguments = ["create", set_name, type_name]
+    if entry_timeout:
+        arguments.append("timeout")
+        arguments.append("%d" % (int(entry_timeout),))
     if exist:
         arguments.append('-exist')
     return ipset_send_command(*arguments, command_timeout=command_timeout)
