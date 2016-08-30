@@ -14,7 +14,7 @@ os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 setup(name='ipsetpy',
       license=LICENSE,
-      version='v0.0.1a2',
+      version='v0.0.1a3',
       description='Python ipset bindings and helper',
       long_description=README,
       author='Sandor Attila Gerendi',
